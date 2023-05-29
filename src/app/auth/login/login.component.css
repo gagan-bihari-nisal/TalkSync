@@ -1,0 +1,38 @@
+.container-fluid {
+    background: #8386db;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #8386db 1%, #5057d8 44%, #383de0 65%, #383ee2 81%, #383ee2 81%, #161ae5 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #8386db 1%, #5057d8 44%, #383de0 65%, #383ee2 81%, #383ee2 81%, #161ae5 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #8386db 1%, #5057d8 44%, #383de0 65%, #383ee2 81%, #383ee2 81%, #161ae5 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8386db', endColorstr='#161ae5', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    opacity: 0.9;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: cursive;
+}
+
+
+
+
+.btn {
+    border-color: aliceblue;
+}
+
+
+.btn {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.671);
+    color: rgba(0, 0, 0, 0.705);
+}

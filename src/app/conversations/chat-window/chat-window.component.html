@@ -1,0 +1,72 @@
+<div class="chat-window" *ngIf="selected">
+  <div class="chat-header">
+    <h4 class="text-center">
+      <span>{{ title }}</span>
+      <button *ngIf="!editing && title" (click)="openModal()" class="icon-button" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        <i class="bi bi-pencil-square"></i>
+      </button>
+    </h4>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    (click)="cancelEditing()">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Chat Name</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            (click)="cancelEditing()"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control input-field" [(ngModel)]="newTitle">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            (click)="cancelEditing()">Cancel</button>
+          <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="saveTitle()">Save</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="backdrop" *ngIf="showError" (click)="closeError()"></div>
+  <app-error *ngIf="showError" [errorMessage]="errorMsg" (okButtonClick)="closeError()"></app-error>
+
+  <div #scrollBottom class="chat-list">
+    <div [ngClass]="{'text-right': message.uid === uid, 'text-left': message.uid !== uid}"
+      *ngFor="let message of messages">
+      <div class="chat-bubble">
+        <div class="message-info">
+          <div class="message-sender">
+            <img [src]="message.avatar" alt="User Photo" class="user-photo">
+            {{ message.name }}
+          </div>
+          <div class="message-time">{{ formatDate(message.createdAt) }}</div>
+        </div>
+        <div class="message-content">{{ message.text }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <form #messageForm="ngForm" (ngSubmit)="sendMessage(messageForm)">
+      <div class="input-group">
+        <input type="text" class="form-control" name="message" id="message" ngModel required=""
+          placeholder="Type a message..." aria-label="Type a message..." aria-describedby="send-button">
+        <button class="btn" type="submit" id="send-button">
+          <i class="bi bi-telegram"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center" *ngIf="!selected">
+  <div class="jumbotron">
+    <div class="col-12 text-white text-center">
+      <h1 class="display-4">Welcome to TalkSync</h1>
+      <p class="lead">Stay Connected, Stay Synced: Introducing TalkSync</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+.chat-list {
+    flex: 0 0 250px;
+    background-color: #61e02638;
+    overflow-y: auto;
+
+}
+
+.chat-list-header {
+    /* color: rgba(18, 97, 59, 0.968); */
+    color: #ffffff;
+    padding: 10px;
+    /* background-color: #509e9582 */
+
+
+    background: #8386db;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #8386db 1%, #8a52f1 44%, #7c37e0 65%, #8a52f1 81%, #7c37e0 81%, #5b10b3 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #8386db 1%, #8a52f1 44%, #7c37e0 65%, #8a52f1 81%, #7c37e0 81%, #5b10b3 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #8386db 1%, #8a52f1 44%, #7c37e0 65%, #8a52f1 81%, #7c37e0 81%, #5b10b3 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8386db', endColorstr='#5b10b3', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    opacity: 0.9;
+
+}
+
+.chat-list .list-group-item {
+    color: rgb(93, 82, 82);
+}
+
+.chat-list .list-group-item.active {
+    /* background: #5690c3de  ; */
+    background: #8386db;
+
+    border: 1px;
+    color: #ffffff;
+}
+
+.chat-list {
+    overflow-y: auto;
+    max-height: 100vh;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.chat-list::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.chat-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+
+.btn {
+    border-color: aliceblue;
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    margin-inline: 10px;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.671);
+    color: rgba(0, 0, 0, 0.705);
+}

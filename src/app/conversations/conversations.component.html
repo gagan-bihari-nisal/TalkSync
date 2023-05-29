@@ -1,0 +1,35 @@
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-sm-10 col-xs-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-center">Choose an Option</h4>
+                    </div>
+                    <div class="card-body mt-5">
+                        <form #convoForm="ngForm" (ngSubmit)="onSubmit(convoForm)">
+
+                       
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Enter Chat Code" name="passCode"
+                                id="passCode"  [(ngModel)]="passCode" required>
+                        </div>
+                        <div class="d-flex justify-content-center mt-3">
+                            <button class="btn btn-primary me-2" type="button" (click)="addNewConvo()">
+                                <i class="bi bi-plus-circle"></i> Add New Conversation
+                            </button>
+                            <button class="btn btn-secondary" type="button" [disabled]="!convoForm.valid" type="submit">
+                                <i class="bi bi-people"></i> Join A Conversation
+                            </button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="backdrop" *ngIf="showError" (click)="closeError()"></div>
+  <app-error *ngIf="showError" [errorMessage]="errorMsg" (okButtonClick)="closeError()"></app-error>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="chat-list">
+    <div class="chat-list-header sticky-top d-flex justify-content-between">
+        <h4>All Chats</h4>
+        <div class="d-flex gap-2">
+            <button type="button" class="btn btn-logout" (click)="onLogout()">Logout</button>
+            <button type="button" class="btn btn-add-new" (click)="onAddNew()"><i class="bi bi-plus"></i> New</button>
+        </div>
+
+
+    </div>
+    <div class="list-group" *ngFor="let chat of chatList | async " style="cursor:pointer">
+        <div class="list-group-item" [ngClass]="{'active': chat.passCode === selected}"
+            (click)="selectChat(chat.passCode)">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{chat.title}}</h5>
+                <small>{{formatDate(chat.updatedOn)}}</small>
+            </div>
+            <small>PassCode: <strong>{{chat.passCode}}</strong></small>
+        </div>
+
+    </div>
+</div>
