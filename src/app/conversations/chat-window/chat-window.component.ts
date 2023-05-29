@@ -55,18 +55,6 @@ export class ChatWindowComponent implements OnInit, OnDestroy, AfterViewChecked 
     } catch (err) { }
   }
 
-  sendMessage(form: NgForm) {
-    const message = form.value.message.trim();
-    try {
-      this.convoService.sendMessage(message, this.user);
-      this.scrollToBottom();
-      form.reset();
-    } catch (error) {
-      this.errorMsg = 'Failed to send message. Please try again.';
-      this.showError = true;
-      console.log(this.errorMsg)
-    }
-  }
 
 
   openModal() {

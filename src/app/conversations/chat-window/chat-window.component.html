@@ -14,7 +14,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edit Chat Name</h5>
+          <h5 class="modal-title text-white">Edit Chat Name</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
             (click)="cancelEditing()"></button>
         </div>
@@ -30,6 +30,7 @@
     </div>
 
   </div>
+  
   <div class="backdrop" *ngIf="showError" (click)="closeError()"></div>
   <app-error *ngIf="showError" [errorMessage]="errorMsg" (okButtonClick)="closeError()"></app-error>
 
@@ -49,23 +50,14 @@
     </div>
   </div>
 
-  <div class="chat-input">
-    <form #messageForm="ngForm" (ngSubmit)="sendMessage(messageForm)">
-      <div class="input-group">
-        <input type="text" class="form-control" name="message" id="message" ngModel required=""
-          placeholder="Type a message..." aria-label="Type a message..." aria-describedby="send-button">
-        <button class="btn" type="submit" id="send-button">
-          <i class="bi bi-telegram"></i>
-        </button>
-      </div>
-    </form>
-  </div>
+ <app-send-message></app-send-message>
+
 </div>
 
 <div class="container-fluid vh-100 d-flex justify-content-center align-items-center" *ngIf="!selected">
   <div class="jumbotron">
     <div class="col-12 text-white text-center">
-      <h1 class="display-4">Welcome to TalkSync</h1>
+      <h1 class="display-4" style="text-align: center;color: white;font-family: cursive;">Welcome to TalkSync</h1>
       <p class="lead">Stay Connected, Stay Synced: Introducing TalkSync</p>
     </div>
   </div>

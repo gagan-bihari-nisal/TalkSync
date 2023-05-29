@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChatListComponent } from './conversations/chat-list/chat-list.component';
 import { ChatWindowComponent } from './conversations/chat-window/chat-window.component';
 import { ErrorComponent } from './error/error.component';
+import { SendMessageComponent } from './conversations/send-message/send-message.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { ErrorComponent } from './error/error.component';
     DashboardComponent,
     ChatListComponent,
     ChatWindowComponent,
-    ErrorComponent
+    ErrorComponent,
+    SendMessageComponent
   ],
   imports: [
     BrowserModule,

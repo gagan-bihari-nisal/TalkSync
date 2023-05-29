@@ -1,0 +1,11 @@
+<div class="chat-input">
+    <form #messageForm="ngForm" (ngSubmit)="sendMessage(messageForm)">
+      <div class="input-group">
+        <input type="text" class="form-control" name="message" id="message" ngModel required
+          placeholder="Type a message..." aria-label="Type a message..." aria-describedby="send-button">
+        <button class="btn" type="submit" id="send-button">
+          <i class="bi bi-telegram"></i>
+        </button>
+      </div>
+    </form>
+  </div>

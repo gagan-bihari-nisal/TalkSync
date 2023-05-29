@@ -1,44 +1,18 @@
 .chat-list {
-  flex: 0 0 250px;
-  background-color: #f2f2f2;
-  overflow-y: auto;
-  flex-grow: 1;
-  overflow-y: auto;
-  padding: 10px;
-}
-
-.chat-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.chat-list li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.chat-list li.active {
-  background-color: #ebebeb;
-}
-
-.chat-list {
   overflow-y: auto;
   max-height: 100vh;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
+  flex: 0 0 250px;
+  background-color: #f2f2f2;
+  flex-grow: 1;
+  padding: 10px;
 }
 
-.chat-list::-webkit-scrollbar {
-  width: 0.5em;
-}
-
-.chat-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.chat-list::-webkit-scrollbar-thumb {
-  background-color: transparent;
+.chat-list ul,
+.chat-list li {
+  padding: 10px;
+  cursor: pointer;
 }
 
 .chat-window {
@@ -51,17 +25,7 @@
 .chat-header {
   color: white;
   padding: 10px;
-  /* background-color: #509e9582 */
-  background: #8386db;
-  /* Old browsers */
-  background: -moz-linear-gradient(45deg, #8386db 1%, #8a52f1 44%, #7c37e0 65%, #8a52f1 81%, #7c37e0 81%, #5b10b3 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #8386db 1%, #8a52f1 44%, #7c37e0 65%, #8a52f1 81%, #7c37e0 81%, #5b10b3 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(45deg, #8386db 1%, #8a52f1 44%, #7c37e0 65%, #8a52f1 81%, #7c37e0 81%, #5b10b3 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8386db', endColorstr='#5b10b3', GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
   opacity: 0.9;
 }
 
@@ -73,33 +37,6 @@
 
 .message {
   margin-bottom: 10px;
-}
-
-.chat-input {
-  padding: 15px;
-  background-color: #f2f2f2;
-}
-
-.chat-input form {
-  display: flex;
-  align-items: center;
-}
-
-.chat-input input[type="text"] {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  margin-right: 10px;
-}
-
-.chat-input button {
-  padding: 10px 15px;
-  background-color: #333aa0ce;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .messages {
@@ -125,7 +62,6 @@
 .text-left .chat-bubble {
   margin-right: auto;
   width: max-content;
-
   background-color: #fff;
   color: #000;
   border-radius: 20px 20px 20px 5px;
@@ -174,25 +110,10 @@
   color: white;
 }
 
-
 .modal-content {
   color: white;
-  background: #8386db;
-  /* Old browsers */
-  background: -moz-linear-gradient(45deg, #8386db 1%, #8a52f1 44%, #7c37e0 65%, #8a52f1 81%, #7c37e0 81%, #5b10b3 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #8386db 1%, #8a52f1 44%, #7c37e0 65%, #8a52f1 81%, #7c37e0 81%, #5b10b3 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(45deg, #8386db 1%, #8a52f1 44%, #7c37e0 65%, #8a52f1 81%, #7c37e0 81%, #5b10b3 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8386db', endColorstr='#5b10b3', GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
   opacity: 0.9;
-
-}
-
-.modal-title {
-  color: white;
 }
 
 .btn {
@@ -204,21 +125,6 @@
 }
 
 .container-fluid {
-  background: #8386db;
-  /* Old browsers */
-  background: -moz-linear-gradient(45deg, #8386db 1%, #5057d8 44%, #383de0 65%, #383ee2 81%, #383ee2 81%, #161ae5 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #8386db 1%, #5057d8 44%, #383de0 65%, #383ee2 81%, #383ee2 81%, #161ae5 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #8386db 1%, #5057d8 44%, #383de0 65%, #383ee2 81%, #383ee2 81%, #161ae5 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8386db', endColorstr='#161ae5', GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
+  background: linear-gradient(45deg, #8386db 1%, #8a52f1 44%, #7c37e0 65%, #8a52f1 81%, #7c37e0 81%, #5b10b3 100%);
   opacity: 0.9;
-}
-
-h1 {
-  text-align: center;
-  color: white;
-  font-family: cursive;
 }
