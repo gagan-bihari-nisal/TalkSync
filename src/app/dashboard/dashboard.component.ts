@@ -10,6 +10,12 @@ export class DashboardComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
+  showOffcanvas = false;
+
+  toggleOffcanvas(): void {
+    this.showOffcanvas = !this.showOffcanvas;
+  }
+
   ngOnInit(): void {
 
   }

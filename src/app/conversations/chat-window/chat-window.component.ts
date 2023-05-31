@@ -1,4 +1,4 @@
-import { AfterViewChecked, AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ElementRef, EventEmitter, HostListener, OnDestroy, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ConversationsService, MessageData, PassCode } from '../conversations.service';
 import { Subscription, switchMap, tap } from 'rxjs';
@@ -34,9 +34,15 @@ export class ChatWindowComponent implements OnInit, OnDestroy, AfterViewChecked 
   showError = false;
   errorMsg = '';
 
+  currentUser='';
+
   closeError() {
     this.showError = false;
   }
+
+
+ 
+  
 
   constructor(private convoService: ConversationsService, private route: ActivatedRoute, private authService: AuthService) { }
 
@@ -83,6 +89,7 @@ export class ChatWindowComponent implements OnInit, OnDestroy, AfterViewChecked 
     this.authService.authStateChanges$?.subscribe(user => {
       this.user = user
       this.uid = user?.uid
+      this.currentUser=user?.displayName??''
     })
 
     this.route.paramMap.subscribe((params) => {

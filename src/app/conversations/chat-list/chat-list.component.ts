@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { AuthService } from 'src/app/auth/auth.service';
@@ -20,12 +20,22 @@ export class ChatListComponent implements OnInit, OnDestroy {
   passCodes: Observable<PassCode[]> | undefined;
   codeSub: Subscription | undefined;
 
+
+
+
+
+ 
+
+
+
   constructor(
     private convoService: ConversationsService,
     private authService: AuthService,
-    private router: Router
-  ) { }
-
+    private router: Router,
+  ) {
+    
+  }
+  
   ngOnInit(): void {
 
     this.authService.authStateChanges$?.subscribe(user => {
